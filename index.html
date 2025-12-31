@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Новым Годом! 🎄</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Мерцающие гирлянды -->
+    <div class="lights-container">
+        <div class="light-strand top">
+            <div class="light red"></div>
+            <div class="light gold"></div>
+            <div class="light green"></div>
+            <div class="light red"></div>
+            <div class="light gold"></div>
+            <div class="light green"></div>
+            <div class="light red"></div>
+            <div class="light gold"></div>
+            <div class="light green"></div>
+            <div class="light red"></div>
+        </div>
+        <div class="light-strand bottom">
+            <div class="light green"></div>
+            <div class="light red"></div>
+            <div class="light gold"></div>
+            <div class="light green"></div>
+            <div class="light red"></div>
+            <div class="light gold"></div>
+            <div class="light green"></div>
+            <div class="light red"></div>
+            <div class="light gold"></div>
+            <div class="light green"></div>
+        </div>
+    </div>
+
+    <!-- Фон города с окошками -->
+    <div class="city-background">
+        <div class="building" style="left: 5%; height: 60%;">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building" style="left: 15%; height: 75%;">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building" style="left: 28%; height: 50%;">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building" style="left: 38%; height: 85%;">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building" style="left: 52%; height: 65%;">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building" style="left: 63%; height: 55%;">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building" style="left: 73%; height: 80%;">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building" style="left: 85%; height: 70%;">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+    </div>
+
+    <!-- Canvas для снега -->
+    <canvas id="snow-canvas"></canvas>
+
+    <!-- Canvas для фейерверка -->
+    <canvas id="firework-canvas"></canvas>
+
+    <!-- Санта с санями -->
+    <div id="santa-container">
+        <div class="santa">
+            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Сани -->
+                <path d="M 20 70 Q 10 75 15 80 L 185 80 Q 190 75 180 70 Z" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+                <path d="M 15 80 Q 5 85 10 90 L 190 90 Q 195 85 185 80 Z" fill="#654321"/>
+
+                <!-- Подарки в санях -->
+                <rect x="40" y="55" width="20" height="20" fill="#c41e3a" stroke="#8B0000" stroke-width="1"/>
+                <rect x="45" y="52" width="10" height="3" fill="#ffd700"/>
+                <rect x="70" y="58" width="18" height="18" fill="#165b33" stroke="#0d3d22" stroke-width="1"/>
+                <rect x="74" y="55" width="10" height="3" fill="#c41e3a"/>
+                <rect x="95" y="60" width="15" height="15" fill="#ffd700" stroke="#daa520" stroke-width="1"/>
+                <rect x="98" y="57" width="9" height="3" fill="#c41e3a"/>
+
+                <!-- Санта -->
+                <ellipse cx="150" cy="50" rx="18" ry="20" fill="#c41e3a"/>
+                <circle cx="150" cy="35" fill="#ffd4a3" r="12"/>
+                <ellipse cx="150" cy="28" rx="13" ry="10" fill="#c41e3a"/>
+                <circle cx="150" cy="23" fill="#c41e3a" r="4"/>
+                <rect x="145" y="28" width="10" height="3" fill="white"/>
+                <circle cx="147" cy="33" fill="black" r="1.5"/>
+                <circle cx="153" cy="33" fill="black" r="1.5"/>
+                <path d="M 147 38 Q 150 40 153 38" stroke="#c41e3a" fill="none" stroke-width="1"/>
+                <ellipse cx="140" cy="28" rx="3" ry="5" fill="white"/>
+
+                <!-- Руки -->
+                <ellipse cx="135" cy="50" rx="5" ry="8" fill="#c41e3a"/>
+                <circle cx="133" cy="56" fill="#ffd4a3" r="3"/>
+                <ellipse cx="165" cy="50" rx="5" ry="8" fill="#c41e3a"/>
+                <circle cx="167" cy="56" fill="#ffd4a3" r="3"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="main-content">
+        <div class="greeting-container">
+            <h1 class="greeting-title">С Новым 2025 Годом!</h1>
+            <div class="greeting-text">
+                <p class="wish">
+                    Пусть новый год принесет в вашу жизнь море радости, счастья и благополучия!
+                </p>
+                <p class="wish">
+                    Пусть сбудутся все мечты, а каждый день будет наполнен волшебством и теплом!
+                </p>
+                <p class="wish">
+                    Желаем крепкого здоровья, успехов во всех начинаниях и исполнения самых заветных желаний!
+                </p>
+                <p class="signature">
+                    С любовью и наилучшими пожеланиями! ❤️
+                </p>
+            </div>
+            <div class="snowflake-decoration">❄️ ✨ 🎄 ✨ ❄️</div>
+        </div>
+    </div>
+
+    <!-- Управление музыкой -->
+    <div class="music-control">
+        <button id="music-toggle" class="music-btn" aria-label="Управление музыкой">
+            <span class="music-icon playing">🔊</span>
+            <span class="music-icon paused" style="display: none;">🔇</span>
+        </button>
+    </div>
+
+    <!-- Аудио элемент -->
+    <audio id="background-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио элемент.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
