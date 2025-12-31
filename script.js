@@ -279,8 +279,6 @@ function tryAutoplay() {
         });
 }
 
-musicToggle.addEventListener('click', toggleMusic);
-
 // ========== Отслеживание мыши для интерактивности ==========
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -307,6 +305,9 @@ window.addEventListener('load', () => {
 
     // Запуск автоматических фейерверков
     startAutoFireworks();
+
+    // Обработчик кнопки музыки
+    musicToggle.addEventListener('click', toggleMusic);
 
     // Попытка автоматического воспроизведения музыки
     setTimeout(tryAutoplay, 500);
